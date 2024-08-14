@@ -11,6 +11,16 @@
         button { padding: 10px 20px; background-color: #007bff; color: white; border: none; cursor: pointer; }
         .result { margin-top: 20px; border: 1px solid #ddd; padding: 10px; font-size: 20px;}
         .textarea { font-size: 20px; }
+        .word {
+            cursor: pointer;
+            display: inline-block;
+            margin-right: 5px;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .word:hover {
+            background-color: #f0f0f0;
+        }
     </style>
 </head>
 <body>
@@ -22,7 +32,7 @@
         
         <div class="result">
             <h2>Parsed Sentence</h2>
-            <p id="parsedWords"></p>
+            <div id="parsedWords"></div>
         </div>
 
         <div class="container">

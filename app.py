@@ -21,9 +21,26 @@ anthropic = Anthropic(api_key=ANTHROPIC_API_KEY)
 def index():
     return send_from_directory('.', 'index.html')
 
+@app.route('/jisho_proxy')
+def jisho_proxy():
+    keyword = request.args.get('keyword')
+    response = requests.get(f'https://jisho.org/api/v1/search/words?keyword={keyword}')
+    return jsonify(response.json())
+
 def tokenize(text):
     tokens = t.tokenize(text)
     words = [token.surface for token in tokens]
+    return words
+
+def tokenize_complete(text):
+    tokens = t.tokenize(text)
+    words = [{
+        'surface': token.surface,
+        'reading': token.reading,
+        'base_form': token.base_form,
+        'pos': token.part_of_speech.split(',')[0]
+    } for token in tokens] 
+
     return words
 
 @app.route('/analyzer', methods = ['POST'])
@@ -76,9 +93,10 @@ def analyze():
     explanation = f'<p>{explanation}</p>'
 
     parsedwords = tokenize(japanese_text)
+    complete_parsed_words = tokenize_complete(japanese_text)
 
     return jsonify({
-        'parsedwords': parsedwords,
+        'parsedwords': complete_parsed_words,
         'translation': translation,
         'explanation': explanation
     })

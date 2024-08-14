@@ -1,4 +1,7 @@
 import { analyzeText } from './analyzeText.js';
+import { showDefinition as importedShowDefinition } from './showDefinition.js';
+
+window.showDefinition = importedShowDefinition;
 
 document.addEventListener('DOMContentLoaded', function() {
     const inputText = document.getElementById('inputText');

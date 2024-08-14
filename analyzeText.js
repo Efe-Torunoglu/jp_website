@@ -14,7 +14,11 @@ async function analyzeText(inputText, parsedWordsElement,translationElement, exp
 
         const data = await response.json();
 
-        parsedWordsElement.textContent = data.parsedwords.join(' - '); 
+        parsedWordsElement.innerHTML = data.parsedwords.map(word=>
+           `<span class="word" onclick="showDefinition('${word.surface}', 
+           '${word.reading}', 
+           '${word.base_form}', 
+           '${word.pos}')"> ${word.surface}</span>`).join(' - '); 
         translationElement.textContent = data.translation;
         explanationElement.innerHTML= data.explanation; 
     }
