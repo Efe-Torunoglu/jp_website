@@ -4,6 +4,7 @@ import { getGrammarExplanation } from './grammarExplanation.js';
 
 window.showDefinition = importedShowDefinition;
 
+
 document.addEventListener('DOMContentLoaded', function() {
     const inputText = document.getElementById('inputText');
 
@@ -16,7 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const explanationElement = document.getElementById('analysisResult');
 
     clearButton.addEventListener('click',() =>{
-        
+        inputText.value = '';
+        translationElement.textContent= '';
+        while (parsedWordsElement.firstChild) {
+            parsedWordsElement.removeChild(parsedWordsElement.firstChild);
+    }
     })
 
     explainButton.addEventListener('click', () => {
