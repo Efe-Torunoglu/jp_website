@@ -1,4 +1,4 @@
-async function analyzeText(inputText, uniqueWordsElement,translationElement, explanationElement){
+async function analyzeText(inputText, parsedWordsElement,translationElement, explanationElement){
     try {
         const response = await fetch('/analyzer', {
             method: 'POST',
@@ -14,7 +14,7 @@ async function analyzeText(inputText, uniqueWordsElement,translationElement, exp
 
         const data = await response.json();
 
-        uniqueWordsElement.textContent = ''; // TODO
+        parsedWordsElement.textContent = data.parsedwords.join(' - '); 
         translationElement.textContent = data.translation;
         explanationElement.innerHTML= data.explanation; 
     }
@@ -23,5 +23,7 @@ async function analyzeText(inputText, uniqueWordsElement,translationElement, exp
         alert('An error occurred while analyzing the text. Please try again.');
     }
 }
+
+
 
 export { analyzeText };

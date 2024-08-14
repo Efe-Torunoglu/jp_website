@@ -4,10 +4,13 @@ import requests
 from dotenv import load_dotenv
 from anthropic import Anthropic
 import re
+from janome.tokenizer import Tokenizer
+
 
 load_dotenv() 
 
 app = Flask(__name__, static_url_path='', static_folder='.')
+t = Tokenizer()
 
 DEEPL_API_KEY = os.getenv('DEEPL_API_KEY')
 ANTHROPIC_API_KEY = os.getenv('ANTHROPIC_API_KEY')
@@ -17,6 +20,11 @@ anthropic = Anthropic(api_key=ANTHROPIC_API_KEY)
 @app.route('/')
 def index():
     return send_from_directory('.', 'index.html')
+
+def tokenize(text):
+    tokens = t.tokenize(text)
+    words = [token.surface for token in tokens]
+    return words
 
 @app.route('/analyzer', methods = ['POST'])
 def analyze():
@@ -51,6 +59,7 @@ def analyze():
         4. Nuances that might be lost in translation
 
         Please structure your response in a clear, easy-to-understand format, using bullet points and line breaks.
+        Most importantly, do not, under any circumstance use romanji, for kanji readings use furigana.
         Furthermore, do not say certainly at the beginning and do not act like an agent. Present the information plainly.
     """
     
@@ -66,7 +75,10 @@ def analyze():
     explanation = explanation.replace('\n\n', '</p><p>').replace('\n', '<br>')
     explanation = f'<p>{explanation}</p>'
 
+    parsedwords = tokenize(japanese_text)
+
     return jsonify({
+        'parsedwords': parsedwords,
         'translation': translation,
         'explanation': explanation
     })
