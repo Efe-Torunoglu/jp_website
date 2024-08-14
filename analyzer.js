@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     clearButton.addEventListener('click',() =>{
         inputText.value = '';
         translationElement.textContent= '';
+        explanationElement.textContent= '';
         while (parsedWordsElement.firstChild) {
             parsedWordsElement.removeChild(parsedWordsElement.firstChild);
     }
