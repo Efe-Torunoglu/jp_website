@@ -3,57 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Japanese Sentence Analyzer</title>
-    <style>
-        body { font-family: Georgia, 'Times New Roman', Times, serif; line-height: 1.6; padding: 20px; }
-        .container { max-width: 800px; margin: 0 auto; }
-        textarea, input[type="text"] { width: 100%; padding: 10px; margin-bottom: 10px; }
-        button { padding: 10px 20px; background-color: #007bff; color: white; border: none; cursor: pointer; }
-        .result { margin-top: 20px; border: 1px solid #ddd; padding: 10px; font-size: 20px;}
-        .textarea { font-size: 20px; }
-        .word {
-            cursor: pointer;
-            display: inline-block;
-            margin-right: 5px;
-            padding: 2px 4px;
-            border-radius: 3px;
-        }
-        .word:hover {
-            background-color: #f0f0f0;
-        }
-    </style>
-<link rel="stylesheet" href="retro-anime.css">
+    <title>Retro Anime Japanese Analyzer</title>
+    <link rel="stylesheet" href="retro-anime.css">
 </head>
 <body>
     <div class="container">
-
-        <h1> Japanese Sentence Analysis Tool</h1>
-        <textarea id="inputText" class="textarea" placeholder="Enter Japanese Sentence Here" rows="4"></textarea>
-        <button id="analyzeButton">Analyze</button>
-        <button id="explainButton">Get Grammar Explanation</button>
-        
-        <div class="result">
-            <h2>Parsed Sentence</h2>
-            <div id="parsedWords"></div>
-        </div>
-
-        <div class="container">
-            <div class="result">
-                <h2>Word Definitions</h2>
-                <div id="wordDefinitions"></div>
+        <div id="inputArea" class="box">
+            <h1>日本語アナライザー</h1>
+            <textarea id="inputText" placeholder="Enter Japanese text here"></textarea>
+            <div class="button-container">
+                <button id="analyzeButton">Analyze (Translate/Parse)</button>
+                <button id="explainButton">Get Grammar Explanation</button>
+                <button id="clearButton"> Clear </button>
             </div>
         </div>
-
-        <div class="result">
-            <h2>Translation (DeepL)</h2>
-            <p id="translation"></p>
+        
+        <div id="parsedSentence" class="box">
+            <h2>Parsed Sentence</h2>
+            <div id="parsedResult"></div>
         </div>
-
-        <div class="result">
-            <h2>Grammatical Explanation (Anthropic)</h2>
-            <div id="explanation"></div>
+        
+        <div id="translation" class="box">
+            <h2>Translation</h2>
+            <div id="translationResult"></div>
+        </div>
+        
+        <div id="wordDefinitions" class="box">
+            <h2>Word Definitions</h2>
+            <div id="definitionsResult"></div>
+        </div>
+        
+        <div id="grammarAnalysis" class="box">
+            <h2>Grammar Analysis</h2>
+            <div id="analysisResult"></div>
         </div>
     </div>
-</body>
+
 <script type="module" src="analyzer.js"></script>
 </html>

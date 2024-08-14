@@ -6,11 +6,18 @@ window.showDefinition = importedShowDefinition;
 
 document.addEventListener('DOMContentLoaded', function() {
     const inputText = document.getElementById('inputText');
+
     const analyzeButton = document.getElementById('analyzeButton');
     const explainButton = document.getElementById('explainButton');
-    const parsedWordsElement = document.getElementById('parsedWords');
-    const translationElement = document.getElementById('translation');
-    const explanationElement = document.getElementById('explanation');
+    const clearButton = document.getElementById('clearButton');
+
+    const parsedWordsElement = document.getElementById('parsedResult');
+    const translationElement = document.getElementById('translationResult');
+    const explanationElement = document.getElementById('analysisResult');
+
+    clearButton.addEventListener('click',() =>{
+        
+    })
 
     explainButton.addEventListener('click', () => {
         getGrammarExplanation(inputText.value,explanationElement)
