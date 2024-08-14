@@ -16,13 +16,12 @@ async function analyzeText(inputText, uniqueWordsElement,translationElement, exp
 
         uniqueWordsElement.textContent = ''; // TODO
         translationElement.textContent = data.translation;
-        explanationElement.textContent = data.explanation; 
+        explanationElement.innerHTML= data.explanation; 
     }
     catch(error){
         console.error('Error' , error);
         alert('An error occurred while analyzing the text. Please try again.');
     }
 }
-
 
 export { analyzeText };

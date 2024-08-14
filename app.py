@@ -63,15 +63,13 @@ def analyze():
         ]
     )
     explanation = claude_response.content[0].text
+    explanation = explanation.replace('\n\n', '</p><p>').replace('\n', '<br>')
+    explanation = f'<p>{explanation}</p>'
 
     return jsonify({
         'translation': translation,
         'explanation': explanation
     })
-
-
-#def format_explanation(text):
-   # sections = re.split(r'(\d+\.)')
 
 
 if __name__ == '__main__':
