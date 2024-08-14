@@ -20,14 +20,12 @@ async function analyzeText(inputText, parsedWordsElement,translationElement, exp
            '${word.base_form}', 
            '${word.pos}')"> ${word.surface}</span>`).join(' - '); 
         translationElement.textContent = data.translation;
-        explanationElement.innerHTML= data.explanation; 
+        //explanationElement.innerHTML= data.explanation; 
     }
     catch(error){
         console.error('Error' , error);
         alert('An error occurred while analyzing the text. Please try again.');
     }
 }
-
-
 
 export { analyzeText };

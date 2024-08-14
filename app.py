@@ -43,30 +43,21 @@ def tokenize_complete(text):
 
     return words
 
-@app.route('/analyzer', methods = ['POST'])
-def analyze():
+@app.route('/grammarExplanation', methods = ['POST'])
+def getGrammarExplanation():
     data = request.json
     japanese_text = data.get('text' ,'')
 
-    # Deepl Section: 
-    deepl_response = requests.post(
-        'https://api-free.deepl.com/v2/translate',
-                headers={'Authorization': f'DeepL-Auth-Key {DEEPL_API_KEY}'},
-        data={
-            'text': japanese_text,
-            'target_lang': 'EN'
-        }
-    )
-    translation = deepl_response.json()['translations'][0]['text']
-
-    # ChatGPT Section
     prompt = f"""
         Analyze the following Japanese text and its English translation:
 
         Do not say anything like Certainly, I'd be happy to. Make the analysis read like a dry scientific paper.
 
         Japanese: {japanese_text}
-        English: {translation}
+
+        Do not provide an English Translation of this sentence. 
+
+        Do not say anything before Particles and their functions. Go immedeatly into the analysis.
 
         Provide a grammatical explanation of this text, paying special attention to:
         1. Particles used and their functions, make sure to especially explain rarer particles or particles being used in odd ways. 
@@ -92,13 +83,30 @@ def analyze():
     explanation = explanation.replace('\n\n', '</p><p>').replace('\n', '<br>')
     explanation = f'<p>{explanation}</p>'
 
-    parsedwords = tokenize(japanese_text)
+    return jsonify({
+        'explanation':explanation
+    })
+
+@app.route('/analyzer', methods = ['POST'])
+def analyze():
+    data = request.json
+    japanese_text = data.get('text' ,'')
+
+    # Deepl Section: 
+    deepl_response = requests.post(
+        'https://api-free.deepl.com/v2/translate',
+                headers={'Authorization': f'DeepL-Auth-Key {DEEPL_API_KEY}'},
+        data={
+            'text': japanese_text,
+            'target_lang': 'EN'
+        }
+    )
+    translation = deepl_response.json()['translations'][0]['text']
     complete_parsed_words = tokenize_complete(japanese_text)
 
     return jsonify({
         'parsedwords': complete_parsed_words,
         'translation': translation,
-        'explanation': explanation
     })
 
 
