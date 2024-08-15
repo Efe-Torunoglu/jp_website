@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const clearButton = document.getElementById('clearButton');
 
     const parsedWordsElement = document.getElementById('parsedResult');
+    const wordDefinitionsElement = document.getElementById('definitionsResult');
     const translationElement = document.getElementById('translationResult');
     const explanationElement = document.getElementById('analysisResult');
 
@@ -20,9 +21,15 @@ document.addEventListener('DOMContentLoaded', function() {
         inputText.value = '';
         translationElement.textContent= '';
         explanationElement.textContent= '';
+
+        // Remove Parse and Word Defs
         while (parsedWordsElement.firstChild) {
             parsedWordsElement.removeChild(parsedWordsElement.firstChild);
     }
+        while (wordDefinitionsElement.firstChild){
+            wordDefinitionsElement.removeChild(wordDefinitionsElement.firstChild);
+        }
+
     })
 
     explainButton.addEventListener('click', () => {

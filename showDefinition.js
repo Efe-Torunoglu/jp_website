@@ -10,7 +10,7 @@ function showDefinition(surface, reading, baseForm, pos) {
         .then(data => {
             console.log("Data received from backend:", data);
             
-            const definitionsDiv = document.getElementById('wordDefinitions');
+            const definitionsDiv = document.getElementById('definitionsResult');
             const definitionElement = document.createElement('div');
             
             let jishoInfo = getJishoInfo(data);
