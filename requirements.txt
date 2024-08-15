@@ -38,7 +38,6 @@ cycler==0.12.1
 cymem==2.0.8
 datasets==2.16.1
 dateparser==1.2.0
-de-core-news-sm @ https://github.com/explosion/spacy-models/releases/download/de_core_news_sm-3.7.0/de_core_news_sm-3.7.0-py3-none-any.whl#sha256=d88c737eb7eb766f730f6a2dcb99dfcdb81623e1e0d89a9c638a2182ac19c52e
 debugpy==1.8.0
 decorator==5.1.1
 deep-translator==1.11.4
@@ -48,7 +47,6 @@ dill==0.3.7
 distlib==0.3.8
 distro==1.9.0
 dm-tree==0.1.8
-en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl#sha256=86cc141f63942d4b2c5fcee06630fd6f904788d2f0ab005cce45aadb8fb73889
 epy-reader==2023.2.8
 executing==2.0.1
 fastapi==0.109.2
