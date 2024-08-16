@@ -1,0 +1,57 @@
+2024-08-15T23:38:02.234497+00:00 app[api]: Initial release by user efe.torunoglu@gmail.com
+2024-08-15T23:38:02.234497+00:00 app[api]: Release v1 created by user efe.torunoglu@gmail.com
+2024-08-15T23:38:02.434698+00:00 app[api]: Enable Logplex by user efe.torunoglu@gmail.com
+2024-08-15T23:38:02.434698+00:00 app[api]: Release v2 created by user efe.torunoglu@gmail.com
+2024-08-15T23:38:11.000000+00:00 app[api]: Build started by user efe.torunoglu@gmail.com
+2024-08-15T23:38:28.000000+00:00 app[api]: Build failed -- check your build output: https://dashboard.heroku.com/apps/1a879114-5feb-413a-a361-e996c4f976e0/activity/builds/2762db10-59e7-47c0-8059-a6bfa5ab123a
+2024-08-15T23:40:04.000000+00:00 app[api]: Build started by user efe.torunoglu@gmail.com
+2024-08-15T23:40:21.000000+00:00 app[api]: Build failed -- check your build output: https://dashboard.heroku.com/apps/1a879114-5feb-413a-a361-e996c4f976e0/activity/builds/cdb24adb-6ad1-4d6f-a45d-0d3e5036b9a5
+2024-08-15T23:41:10.000000+00:00 app[api]: Build started by user efe.torunoglu@gmail.com
+2024-08-15T23:41:26.000000+00:00 app[api]: Build failed -- check your build output: https://dashboard.heroku.com/apps/1a879114-5feb-413a-a361-e996c4f976e0/activity/builds/74eddbca-ddd4-419b-8298-6e6a4ac5561c
+2024-08-15T23:42:18.000000+00:00 app[api]: Build started by user efe.torunoglu@gmail.com
+2024-08-15T23:42:35.000000+00:00 app[api]: Build failed -- check your build output: https://dashboard.heroku.com/apps/1a879114-5feb-413a-a361-e996c4f976e0/activity/builds/7352741d-403a-48d4-ab41-0a2171735d25
+2024-08-15T23:43:45.000000+00:00 app[api]: Build started by user efe.torunoglu@gmail.com
+2024-08-15T23:44:02.000000+00:00 app[api]: Build failed -- check your build output: https://dashboard.heroku.com/apps/1a879114-5feb-413a-a361-e996c4f976e0/activity/builds/f4bc738e-5cc3-4cac-b0fc-b6b48e914a87
+2024-08-15T23:44:34.000000+00:00 app[api]: Build started by user efe.torunoglu@gmail.com
+2024-08-15T23:45:10.000000+00:00 app[api]: Build failed -- check your build output: https://dashboard.heroku.com/apps/1a879114-5feb-413a-a361-e996c4f976e0/activity/builds/076a0fbd-8534-4f17-aa4e-06e7f79c50fc
+2024-08-15T23:47:28.000000+00:00 app[api]: Build started by user efe.torunoglu@gmail.com
+2024-08-15T23:48:07.000000+00:00 app[api]: Build failed -- check your build output: https://dashboard.heroku.com/apps/1a879114-5feb-413a-a361-e996c4f976e0/activity/builds/720a8ffb-3a95-40f4-b593-62373b0f5af8
+2024-08-15T23:49:56.000000+00:00 app[api]: Build started by user efe.torunoglu@gmail.com
+2024-08-15T23:50:38.868213+00:00 app[api]: Release v3 created by user efe.torunoglu@gmail.com
+2024-08-15T23:50:38.868213+00:00 app[api]: Deploy 83b7fc1b by user efe.torunoglu@gmail.com
+2024-08-15T23:50:38.879565+00:00 app[api]: Scaled to web@1:Basic by user efe.torunoglu@gmail.com
+2024-08-15T23:50:42.342177+00:00 heroku[web.1]: Starting process with command `gunicorn app:app`
+2024-08-15T23:50:42.853526+00:00 app[web.1]: Python buildpack: Detected 512 MB available memory and 8 CPU cores.
+2024-08-15T23:50:42.853633+00:00 app[web.1]: Python buildpack: Defaulting WEB_CONCURRENCY to 2 based on the available memory.
+2024-08-15T23:50:42.869746+00:00 app[web.1]: /bin/bash: line 1: gunicorn: command not found
+2024-08-15T23:50:42.911032+00:00 heroku[web.1]: Process exited with status 127
+2024-08-15T23:50:42.935054+00:00 heroku[web.1]: State changed from starting to crashed
+2024-08-15T23:50:42.938876+00:00 heroku[web.1]: State changed from crashed to starting
+2024-08-15T23:50:46.092054+00:00 heroku[web.1]: Starting process with command `gunicorn app:app`
+2024-08-15T23:50:46.611517+00:00 app[web.1]: Python buildpack: Detected 512 MB available memory and 8 CPU cores.
+2024-08-15T23:50:46.612068+00:00 app[web.1]: Python buildpack: Defaulting WEB_CONCURRENCY to 2 based on the available memory.
+2024-08-15T23:50:46.627178+00:00 app[web.1]: /bin/bash: line 1: gunicorn: command not found
+2024-08-15T23:50:46.660852+00:00 heroku[web.1]: Process exited with status 127
+2024-08-15T23:50:46.681046+00:00 heroku[web.1]: State changed from starting to crashed
+2024-08-15T23:50:52.000000+00:00 app[api]: Build succeeded
+2024-08-15T23:51:47.767152+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=janalyze-35141447c4e6.herokuapp.com request_id=a5cc0d2b-ba13-411c-8059-c173dd6f82fe fwd="73.162.31.179" dyno= connect= service= status=503 bytes= protocol=https
+2024-08-15T23:51:48.500708+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=janalyze-35141447c4e6.herokuapp.com request_id=77616a22-7517-495c-9043-f28ad1d8507a fwd="73.162.31.179" dyno= connect= service= status=503 bytes= protocol=https
+2024-08-15T23:52:36.404593+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=janalyze-35141447c4e6.herokuapp.com request_id=6b648745-2fa3-458e-ab02-f1eeed4a7c0f fwd="73.162.31.179" dyno= connect= service= status=503 bytes= protocol=https
+2024-08-15T23:52:36.808366+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=janalyze-35141447c4e6.herokuapp.com request_id=823591de-5957-449b-8a03-247456ab5d3a fwd="73.162.31.179" dyno= connect= service= status=503 bytes= protocol=https
+2024-08-15T23:53:14.222890+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=janalyze-35141447c4e6.herokuapp.com request_id=846dbc0e-274e-47ce-93f3-90bfdf982cd9 fwd="73.162.31.179" dyno= connect= service= status=503 bytes= protocol=https
+2024-08-15T23:53:14.815692+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=janalyze-35141447c4e6.herokuapp.com request_id=fd32f7b4-fc27-4d3a-9e60-220dc25f89f9 fwd="73.162.31.179" dyno= connect= service= status=503 bytes= protocol=https
+2024-08-15T23:53:22.144604+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=janalyze-35141447c4e6.herokuapp.com request_id=dc850858-d4e5-4a8a-ba87-0912d6766001 fwd="73.162.31.179" dyno= connect= service= status=503 bytes= protocol=https
+2024-08-15T23:53:22.728292+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=janalyze-35141447c4e6.herokuapp.com request_id=9726c0d4-5b56-4d6c-9b4e-3f5a9badeb19 fwd="73.162.31.179" dyno= connect= service= status=503 bytes= protocol=https
+2024-08-15T23:54:20.000000+00:00 app[api]: Build started by user efe.torunoglu@gmail.com
+2024-08-15T23:54:43.860140+00:00 app[api]: Release v4 created by user efe.torunoglu@gmail.com
+2024-08-15T23:54:43.860140+00:00 app[api]: Deploy 908d7373 by user efe.torunoglu@gmail.com
+2024-08-15T23:54:44.106670+00:00 heroku[web.1]: State changed from crashed to starting
+2024-08-15T23:54:47.614344+00:00 heroku[web.1]: Starting process with command `gunicorn app:app`
+2024-08-15T23:54:48.341419+00:00 app[web.1]: Python buildpack: Detected 512 MB available memory and 8 CPU cores.
+2024-08-15T23:54:48.341502+00:00 app[web.1]: Python buildpack: Defaulting WEB_CONCURRENCY to 2 based on the available memory.
+2024-08-15T23:54:48.356977+00:00 app[web.1]: /bin/bash: line 1: gunicorn: command not found
+2024-08-15T23:54:48.403747+00:00 heroku[web.1]: Process exited with status 127
+2024-08-15T23:54:48.431533+00:00 heroku[web.1]: State changed from starting to crashed
+2024-08-15T23:54:57.000000+00:00 app[api]: Build succeeded
+2024-08-15T23:54:58.047122+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/" host=janalyze-35141447c4e6.herokuapp.com request_id=49d7370f-9279-409d-b372-1617ffbe7686 fwd="73.162.31.179" dyno= connect= service= status=503 bytes= protocol=https
+2024-08-15T23:54:58.607209+00:00 heroku[router]: at=error code=H10 desc="App crashed" method=GET path="/favicon.ico" host=janalyze-35141447c4e6.herokuapp.com request_id=46e8a08a-1c3a-4286-9186-53b1e51804ca fwd="73.162.31.179" dyno= connect= service= status=503 bytes= protocol=https
